@@ -1,10 +1,15 @@
-const directionButton = (props) => {
+import { useState } from "react";
+import '../DirectionButton.css';
+
+
+const DirectionButton = (props) => {
+
 
     return(
-        <div className="directionButton">
-            {props.arrow}
-        </div>
+        <button class="directionButton">
+            {props.text}
+        </button>
     )
 }
 
-export default directionButton;
+export default DirectionButton;

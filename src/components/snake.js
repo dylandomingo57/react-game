@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 const Snake = (props) => {
 
     return (
-        <div className="snake">
+        <div class="snake">
 
         </div>
     )

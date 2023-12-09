@@ -1,4 +1,5 @@
 import Snake from "./snake";
+import { useState } from "react";
 
 const Grid = (props) => {
     
@@ -6,7 +7,7 @@ const Grid = (props) => {
     const [snakePosition, setSnakePosition] = useState([0][0])
 
     return (
-        <div className="grid">
+        <div class="grid">
             <Snake></Snake>
         </div>
     )
