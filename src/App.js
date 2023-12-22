@@ -16,7 +16,7 @@ function App() {
   const [computerChoice, setComputerChoice] = useState("");
   const [win, setWin] = useState(null);
 
-  function decideWinner() {
+  const decideWinner = () => {
     if (playerChoice == "Rock") { 
       if (computerChoice == "Paper") { setWin(false) }
       else if (computerChoice == "Scissors") { setWin(true) }
@@ -34,23 +34,14 @@ function App() {
     }
   }
 
-  function handleClick(choice) {
+  const handleClick = (e) => {
     //computer choice
-    setComputerChoice(choiceDictionary[Math.floor(Math.random() * 2)])
+    setComputerChoice(choiceDictionary[Math.floor(Math.random() * 3)])
 
     //plr choice
-    setPlayerChoice(choice)
-    decideWinner()
-
-    // if (win) {
-      
-    // }
-    // else if (!win) {
-
-    // }
-    // else {
-
-    // }
+    setPlayerChoice(e.target.textContent)
+    console.log(playerChoice) 
+    console.log(computerChoice)
   }
 
   return (
@@ -59,15 +50,21 @@ function App() {
         <p class="paragraph"> ROCK PAPAH SCISSAHSSSSSSSS </p>
       </div>
       <div class = "opponentChoice">
-        <p> {computerChoice} </p>
+        <p> Opponent Chooses: {computerChoice} </p>
       </div>
       <div>
         <p> </p>
       </div>
       <div class="controlButtons">
-        <Button text="Rock" onButtonClick={handleClick("Rock")}/>
-        <Button text="Paper" onButtonClick={handleClick("Paper")}/>
-        <Button text="Scissors" onButtonClick={handleClick("Scissors")}/>
+        <button class="Rock" onClick={handleClick}>Rock</button>
+        <button class="Paper" onClick={handleClick}>Paper</button>
+        <button class="Scissors" onClick={handleClick}>Scissors</button>
+      </div>
+      <div class="result">
+        <button onClick={decideWinner}>Check Who Won</button>
+        <p>
+          {win ? "you win!!!" : "LLLLLLL"}
+        </p>
       </div>
     </div>
   );
