@@ -17,19 +17,19 @@ function App() {
   const [win, setWin] = useState(null);
 
   const decideWinner = () => {
-    if (playerChoice == "Rock") { 
-      if (computerChoice == "Paper") { setWin(false) }
-      else if (computerChoice == "Scissors") { setWin(true) }
+    if (playerChoice === "Rock") { 
+      if (computerChoice === "Paper") { setWin(false) }
+      else if (computerChoice === "Scissors") { setWin(true) }
     }
-    else if (playerChoice == "Paper") {
-      if (computerChoice == "Rock") { setWin(true) }
-      else if (computerChoice == "Scissors") { setWin(false) }
+    else if (playerChoice === "Paper") {
+      if (computerChoice === "Rock") { setWin(true) }
+      else if (computerChoice === "Scissors") { setWin(false) }
     }
-    else if (playerChoice == "Scissors") {
-      if (computerChoice == "Rock") { setWin(true) }
-      else if (computerChoice == "Paper") { setWin(false) }
+    else if (playerChoice === "Scissors") {
+      if (computerChoice === "Rock") { setWin(true) }
+      else if (computerChoice === "Paper") { setWin(false) }
     }
-    else if (playerChoice == computerChoice) {
+    else if (playerChoice === computerChoice) {
       setWin(null)
     }
   }
@@ -64,7 +64,7 @@ function App() {
         <button onClick={decideWinner}>Check Who Won</button>
         <p>
           {win ? "you win!!!" : "LLLLLLL"}
-        </p>
+        </p>  
       </div>
     </div>
   );
